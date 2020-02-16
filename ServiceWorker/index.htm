@@ -1,0 +1,38 @@
+<html>
+    <script>
+        
+    </script>
+
+    <body>
+        Hello Service Worker
+
+
+
+        <h4>Reference:</h4> 
+        <a href='https://developers.google.com/web/fundamentals/primers/service-workers'>
+                Dev Google : Service Workers: an Introduction
+        </a><br/>
+
+        <a href='https://jakearchibald.com/2014/offline-cookbook/'>
+                The offline cookbook
+        </a><br/>
+        
+        
+
+        Compare
+
+        from 
+        <a href='https://stackoverflow.com/questions/38632723/what-can-service-workers-do-that-web-workers-cannot'> 
+                StackOverflow 
+        </a>
+        
+        There are fundamental differences in their lifecycle and the number of instances per origin you can have. In short:
+
+        |              | Web Workers  | Service Workers  |
+        |--------------|--------------|------------------|
+        | Instances    | Many per tab | One for all tabs |
+        | Lifespan     | Same as tab  | Independent      |
+        | Intended use | Parallelism  | Offline support  |
+
+    </body>
+</html>

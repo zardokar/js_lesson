@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Web Worker example</title>
+        <script>
+
+            const workers = [new Worker('infworker.js') , new Worker('infworker.js')]
+
+            function changeText(element)
+            {
+                let message = element.value
+
+                changeTextLabel('LBL01',message,  workers[0] )
+                changeTextLabel('LBL02',message,  workers[1] )
+            }
+
+            function changeTextLabel(id,message,worker)
+            {
+                worker.postMessage(message)
+
+                worker.onmessage = (e) => {
+                    document.getElementById(id).value = e.data
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        Hello Web Worker<br/>
+        <input type="text" id="INP01" onchange="changeText(this)"/>
+        <input type="text" id="LBL01" readonly=true />
+        <input type="text" id="LBL02" readonly=true />
+    </body>
+</html>
